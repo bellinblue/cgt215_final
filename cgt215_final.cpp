@@ -1,6 +1,7 @@
-﻿// cgt215_final.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//If the cell is alive, then it stays alive if it has either 2 or 3 live neighbors
-//If the cell is dead, then it springs to life only in the case that it has 3 live neighbors
+﻿//cgt215_final.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//A game that simulates cell growth depending on two rules:
+//A live cells stays alive if it has either 2 or 3 live neighbors.
+//A dead cell is revived if it has 3 live neighbors.
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -24,6 +25,7 @@ int * cellData(int cell_num) {
     int cellCount_y = window.getSize().y / cellSize_y;
     int data[6] = {0, (cell_num / cellCount_y) % 100, cellSize_x, cellSize_y, cellCount_x, cellCount_y};
 
+    //Determine the x axis.
     int len = to_string(cell_num).length();
     if (len % 10 == 4) {
         cell_num = cell_num % 100;
@@ -31,7 +33,6 @@ int * cellData(int cell_num) {
     else if (len % 10 == 3) {
         cell_num = cell_num % 100;  
     }
-
     if (cell_num >= cellCount_x) {
         data[0] = cell_num - cellCount_x;
     }
@@ -45,8 +46,10 @@ void drawCell(int cell_num) {
     cell.setFillColor(Color::White);
     cell.setSize(Vector2f(20, 20));
     
+    //Grab data for the given cell.
     int* data = cellData(cell_num);
 
+    //Set position & draw cell.
     cell.setPosition(Vector2f(*(data+0) * *(data+2), *(data+1) * *(data+3)));
     window.draw(cell);
 }
@@ -146,7 +149,7 @@ int cellGrowth(int cell_num, int cells[2500]) {
 
    for (int i = 0; i < (sizeof(check) / sizeof(*check)); i++) {
 
-       int checkRowNum = (check[i] / *(data+3)) % 100;
+       int checkRowNum = (check[i] / *(data+3)) % 100; //Is the checked cell in the same row as the origin cell?
 
        //Check if number bleeds over northmost border of window.
        if (rowNum == 0 && check[i] >= -(rowLen+1) && check[i] < 0) {
@@ -273,6 +276,7 @@ int main() {
     patternsInfo.setCharacterSize(25);
     patternsInfo.setPosition(patternsHead.getPosition().x, patternsHead.getPosition().y + 30);
 
+    //Create grid line
     Color col(50, 50, 50);
     RectangleShape line;
     line.setFillColor(col);
@@ -280,7 +284,6 @@ int main() {
     Clock clock;
     Time lastTime(clock.getElapsedTime());
     Time currentTime(lastTime);
-
     long autoTick(0);
     long cycleTick(0);
     long bufferTick(0);
@@ -301,17 +304,20 @@ int main() {
                 exit(0);
             }
 
+            //Create a time buffer so users can't spam button.
             if (bufferTick >= 250) { buffer = false; bufferTick = 0; }
             if (buffer) { bufferTick += deltaMS; }
+            //Start and pause simulation.
             if (!buffer) {
                 if (Keyboard::isKeyPressed(Keyboard::Enter)) {
-                    buffer = true;
                     if (titleDraw) { titleDraw = false; }
                     else { titleDraw = true; }
                     startSound.play();
+                    buffer = true; //Trigger time buffer.
                 }
             }
 
+            //Create a time buffer so users can't spam button.
             if (cycleTick >= 250) { cycle = false; cycleTick = 0; }
             if (cycle) { cycleTick += deltaMS; }
             //Cycle through patterns.
@@ -352,7 +358,7 @@ int main() {
                         patternsInfo.setString(patternName[6]);
                         break;
                     }
-                    cycle = true;
+                    cycle = true; //Trigger time buffer.
                 }
             }
 
@@ -397,8 +403,8 @@ int main() {
             }
 
             if (titleDraw) {
-                window.draw(curtain); //Cover grid & gun with half opacity curtain while in title.
-                window.draw(titleText);
+                window.draw(curtain); //Cover grid & patterns with half opacity curtain while in title.
+                window.draw(titleText); //Title only draws when simulation is paused.
             }
 
             window.draw(instructions);

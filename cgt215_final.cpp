@@ -238,6 +238,7 @@ int main() {
     if (!music.openFromFile("bgm.ogg")) {
         cout << "Failed to load music";
     }
+    music.setLoop(true);
     music.play();
 
     Font fnt;

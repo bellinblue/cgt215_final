@@ -5,64 +5,74 @@ C:\Users\rnmci\source\repos\cgt215_final\packages\SFPhysics.2.3.2\build\native\i
   C:\Users\rnmci\source\repos\cgt215_final\packages\SFPhysics.2.3.2\build\native\include\SFPhysics\BoundsCollisionResult.h(8,9):
   see declaration of 'sfp::BoundsCollisionResult'
   
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(24,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,64): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,64): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,64): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,64): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,64): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,41): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,41): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,41): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(47,41): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         and
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,66): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         and
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(187,46): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,71): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,71): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,71): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,71): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,71): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,46): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,46): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,46): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(195,46): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         and
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(254,54): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(256,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         with
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:             T=unsigned int
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         and
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         [
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:             T=float
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(260,51): warning C4244:         ]
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(262,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(37,1): warning C4172: returning address of local variable or temporary: data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(27,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,64): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,64): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,64): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,64): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,64): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,41): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,41): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,41): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(50,41): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         and
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,66): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         and
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(249,46): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,71): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,71): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,71): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,71): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,71): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,46): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,46): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,46): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(258,46): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,74): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,74): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,74): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,74): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,74): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,49): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,49): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,49): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,49): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(271,49): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         and
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(386,54): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(388,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         with
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:             T=unsigned int
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         and
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         [
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:             T=float
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(393,51): warning C4244:         ]
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(395,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rnmci\source\repos\cgt215_final\cgt215_final.cpp(40,1): warning C4172: returning address of local variable or temporary: data
   cgt215_final.vcxproj -> C:\Users\rnmci\source\repos\cgt215_final\x64\Debug\cgt215_final.exe

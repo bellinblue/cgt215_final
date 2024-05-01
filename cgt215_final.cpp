@@ -1,4 +1,4 @@
-// cgt215_final.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// cgt215_final.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //If the cell is alive, then it stays alive if it has either 2 or 3 live neighbors
 //If the cell is dead, then it springs to life only in the case that it has 3 live neighbors
 
@@ -7,6 +7,7 @@
 #include <SFPhysics.h>
 #include <vector>
 #include <list>
+#include <SFML/Audio.hpp>
 
 using namespace std;
 using namespace sf;
@@ -56,7 +57,7 @@ void drawGosper(int cells[]) {
                     220, 121, 171, 221, 72, 272, 74, 274, 24, 324, 134, 135, 184, 185}; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i] + 457] = 1;
+        cells[toDraw[i] + 857] = 1;
     }
 }
 
@@ -83,7 +84,7 @@ void drawSpaceship(int cells[]) {
                     771, 772, 773, 778, 779, 806, 808, 815, 821, 822, 831, 866, 882, 884, 933 }; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i]] = 1;
+        cells[toDraw[i] + 707] = 1;
     }
 }
 
@@ -94,7 +95,7 @@ void drawFace(int cells[]) {
                      957, 1000, 1001, 1007, 1050, 1051, 1056, 1057, 1102, 1103, 1104, 1105 }; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i]] = 1;
+        cells[toDraw[i] + 513] = 1;
     }
 }
 
@@ -103,16 +104,16 @@ void drawLotus(int cells[]) {
                      360, 361, 362, 409, 412, 454, 460, 461, 502, 503, 505, 510, 553, 555, 604, 605 }; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i]] = 1;
+        cells[toDraw[i] + 818] = 1;
     }
 }
 
 void drawDagger(int cells[]) {
     int toDraw[] = { 5, 54, 56, 103, 105, 107, 200, 153, 157, 210, 201, 203, 205, 207, 209, 250,
-                     252, 258, 310, 303, 304, 305, 306, 307, 405, 454, 456, 505 }; //Grid IDs
+                     252, 258, 260, 303, 304, 305, 306, 307, 405, 454, 456, 505 }; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i]] = 1;
+        cells[toDraw[i] + 819] = 1;
     }
 }
 
@@ -122,7 +123,7 @@ void drawDiamond(int cells[]) {
                      404, 405, 406, 407}; //Grid IDs
 
     for (int i = 0; i < sizeof(toDraw) / sizeof(*toDraw); i++) {
-        cells[toDraw[i]] = 1;
+        cells[toDraw[i] + 869] = 1;
     }
 }
 
@@ -203,6 +204,8 @@ int cellGrowth(int cell_num, int cells[2500]) {
 
 int main() {
     bool draw = true;
+    int pattern(0);
+    string patternName[7] = { "Gosper gun", "Spaceship", "Lotus", "Dagger", "(@m@)", "Diamond", "101"};
     int cellSize_x = 20;
     int cellSize_y = 20;
     int cellCount_x = window.getSize().x / cellSize_x;
@@ -213,12 +216,34 @@ int main() {
         cells[t] = 0;
     }
    
+    SoundBuffer nextBuffer;
+    if (!nextBuffer.loadFromFile("next.ogg")) {
+        cout << "Could not load SFX audio" << endl;
+        exit(5);
+    }
+    Sound nextSound;
+    nextSound.setBuffer(nextBuffer);
+
+    SoundBuffer startBuffer;
+    if (!startBuffer.loadFromFile("title.ogg")) {
+        cout << "Could not load SFX audio" << endl;
+    }
+    Sound startSound;
+    startSound.setBuffer(startBuffer);
+
+    Music music;
+    if (!music.openFromFile("bgm.ogg")) {
+        cout << "Failed to load music";
+    }
+    music.play();
+
     Font fnt;
     if (!fnt.loadFromFile("SpiralBitmap-2mW.ttf")) {
         cout << "Could not load font." << endl;
         exit(3);
     }
    
+    //Title text
     bool titleDraw = true;
     RectangleShape curtain;
     curtain.setSize(Vector2f(window.getSize().x, window.getSize().y));
@@ -227,12 +252,26 @@ int main() {
     Text instructions;
     titleText.setFont(fnt);
     instructions.setFont(fnt);
+    instructions.setFillColor(Color(255, 255, 255, 155));
     titleText.setString("Conway's Game of Life");
     titleText.setCharacterSize(45);
-    titleText.setPosition(window.getSize().x / 14, window.getSize().y - (window.getSize().y / 4));
-    instructions.setString("Press ENTER to begin automation.\n\nPress SPACE to cycle through patterns.");
+    titleText.setPosition(window.getSize().x / 20, window.getSize().y - (window.getSize().y / 5));
+    instructions.setString("Press ENTER to begin or pause automation.\nPress ESC to exit.");
     instructions.setCharacterSize(25);
-    instructions.setPosition(titleText.getPosition().x, titleText.getPosition().y + 100);
+    instructions.setPosition(titleText.getPosition().x, titleText.getPosition().y + 75);
+
+    //Pattern text
+    Text patternsHead;
+    Text patternsInfo;
+    patternsHead.setFont(fnt);
+    patternsInfo.setFont(fnt);
+    patternsInfo.setFillColor(Color(255, 255, 255, 155));
+    patternsHead.setString("Press SPACE to cycle through patterns.");
+    patternsHead.setCharacterSize(30);
+    patternsHead.setPosition(window.getSize().x / 20, window.getSize().y / 22);
+    patternsInfo.setString(patternName[0]);
+    patternsInfo.setCharacterSize(25);
+    patternsInfo.setPosition(patternsHead.getPosition().x, patternsHead.getPosition().y + 30);
 
     Color col(50, 50, 50);
     RectangleShape line;
@@ -243,6 +282,10 @@ int main() {
     Time currentTime(lastTime);
 
     long autoTick(0);
+    long cycleTick(0);
+    long bufferTick(0);
+    bool cycle = false;
+    bool buffer = false;
 
     drawGosper(cells); //Initialize with Gosper gun.
 
@@ -253,17 +296,64 @@ int main() {
         if (deltaMS > 8) {
             lastTime = currentTime;
             autoTick += deltaMS;
-            //Disable title draw.
-            if (Keyboard::isKeyPressed(Keyboard::Enter) && titleDraw) {
-                autoTick = 0;
-                titleDraw = false; 
+
+            if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+                exit(0);
             }
+
+            if (bufferTick >= 250) { buffer = false; bufferTick = 0; }
+            if (buffer) { bufferTick += deltaMS; }
+            if (!buffer) {
+                if (Keyboard::isKeyPressed(Keyboard::Enter)) {
+                    buffer = true;
+                    if (titleDraw) { titleDraw = false; }
+                    else { titleDraw = true; }
+                    startSound.play();
+                }
+            }
+
+            if (cycleTick >= 250) { cycle = false; cycleTick = 0; }
+            if (cycle) { cycleTick += deltaMS; }
             //Cycle through patterns.
-            if (Keyboard::isKeyPressed(Keyboard::Space) && titleDraw) {
-                autoTick = 0;
-                window.clear(); 
-                std::fill(cells, cells + (sizeof(cells) / sizeof(*cells)), 0);
-                drawSpaceship(cells);
+            if (!cycle) {
+                if (Keyboard::isKeyPressed(Keyboard::Space)) {
+                    nextSound.play();
+                    window.clear();
+                    std::fill(cells, cells + (sizeof(cells) / sizeof(*cells)), 0);
+                    pattern += 1;
+                    if (pattern > (sizeof(patternName) / sizeof(*patternName))-1) { pattern = 0; }
+                    switch (pattern) {
+                    case 0:
+                        drawGosper(cells);
+                        patternsInfo.setString(patternName[0]);
+                        break;
+                    case 1:
+                        drawSpaceship(cells);
+                        patternsInfo.setString(patternName[1]);
+                        break;
+                    case 2:
+                        drawLotus(cells);
+                        patternsInfo.setString(patternName[2]);
+                        break;
+                    case 3:
+                        drawDagger(cells);
+                        patternsInfo.setString(patternName[3]);
+                        break;
+                    case 4:
+                        drawFace(cells);
+                        patternsInfo.setString(patternName[4]);
+                        break;
+                    case 5:
+                        drawDiamond(cells);
+                        patternsInfo.setString(patternName[5]);
+                        break;
+                    case 6:
+                        draw101(cells);
+                        patternsInfo.setString(patternName[6]);
+                        break;
+                    }
+                    cycle = true;
+                }
             }
 
             window.clear();
@@ -307,11 +397,14 @@ int main() {
             }
 
             if (titleDraw) {
-                window.draw(instructions);
                 window.draw(curtain); //Cover grid & gun with half opacity curtain while in title.
                 window.draw(titleText);
             }
-            
+
+            window.draw(instructions);
+            window.draw(patternsHead);
+            window.draw(patternsInfo);
+
             window.display();
 
         }
